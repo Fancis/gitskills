@@ -58,6 +58,7 @@
     MMDrawerController *drawerController = [[MMDrawerController alloc]initWithCenterViewController:tabBarController leftDrawerViewController:leftVC];
     //左边页面可被拉出
     drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
+    //MMOpenDrawerGestureModeBezelPanningCenterView，只有点击左边20个像素拖动才可以拉出抽屉
     drawerController.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
     
     self.window.rootViewController = drawerController;

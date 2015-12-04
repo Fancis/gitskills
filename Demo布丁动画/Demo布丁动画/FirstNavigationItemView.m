@@ -15,7 +15,7 @@
     UIView *_lineView;
     void (^tempBlc)(UIButton *button,NSInteger index);
  
-    CustomSendMessage *_sendMessage;
+
 }
 @end
 
@@ -25,7 +25,7 @@
 
     self = [super initWithFrame:frame];
     if (self) {
-        _sendMessage = [CustomSendMessage sendMessage];
+
         
         UIButton *button1 = [self buttonWithTitle:@"推荐" andTag:1101];
         [self addSubview:button1];
@@ -53,8 +53,7 @@
             make.left.and.bottom.equalTo(self);
             make.width.equalTo(self.mas_width).with.multipliedBy(0.5);
         }];
-        _sendMessage.lineView = _lineView;
-        
+
         UILabel *label = [UILabel new];
         label.backgroundColor = [UIColor grayColor];
         [self addSubview:label];
