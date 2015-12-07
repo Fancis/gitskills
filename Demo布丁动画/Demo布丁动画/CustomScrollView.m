@@ -52,7 +52,7 @@
 - (void)didMoveToSuperview{
     _pageControl = [UIPageControl new];
     _pageControl.pageIndicatorTintColor = [UIColor whiteColor];
-    _pageControl.numberOfPages = 3;
+    _pageControl.numberOfPages = [_imageViews count];
     _pageControl.currentPageIndicatorTintColor = [UIColor redColor];
     _pageControl.currentPage = 1;
     //加载在self的父视图superview上。

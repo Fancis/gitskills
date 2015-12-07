@@ -65,6 +65,7 @@
         }
     }];
     self.navigationItem.titleView = _itemView;
+    
     firstScrollView.delegate = self;
     //
     customScrollView = [self.view viewWithTag:2001];
