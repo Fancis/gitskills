@@ -55,7 +55,6 @@
 		1820CFB81C09E56D009139C8 /* selectTimeLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1820CFB71C09E56D009139C8 /* selectTimeLine@2x.png */; };
 		1820CFC21C0BDC25009139C8 /* FirstNavigationItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820CFC11C0BDC25009139C8 /* FirstNavigationItemView.m */; };
 		1820D18A1C0FD086009139C8 /* FirstScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D1891C0FD086009139C8 /* FirstScrollView.m */; };
-		1820D18D1C0FD0BA009139C8 /* CustomTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D18C1C0FD0BA009139C8 /* CustomTableView.m */; };
 		1820D18F1C102B4B009139C8 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1820D18E1C102B4B009139C8 /* Reveal.framework */; };
 		1820D1D71C105D8F009139C8 /* CustomSendMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D1D61C105D8F009139C8 /* CustomSendMessage.m */; };
 		1820D1DC1C111EF1009139C8 /* IMG_0079.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 1820D1DB1C111EF1009139C8 /* IMG_0079.JPG */; };
@@ -77,6 +76,8 @@
 		1820D2131C112019009139C8 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D2011C112019009139C8 /* UIRefreshControl+AFNetworking.m */; };
 		1820D2141C112019009139C8 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D2031C112019009139C8 /* UIWebView+AFNetworking.m */; };
 		1820D2171C11245D009139C8 /* CustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D2161C11245D009139C8 /* CustomScrollView.m */; };
+		1820D3141C15A4B3009139C8 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D3131C15A4B3009139C8 /* CustomCollectionViewCell.m */; };
+		1820D3171C15C31C009139C8 /* CustomCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D3161C15C31C009139C8 /* CustomCollectionViewLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,8 +183,6 @@
 		1820CFC11C0BDC25009139C8 /* FirstNavigationItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstNavigationItemView.m; sourceTree = "<group>"; };
 		1820D1881C0FD086009139C8 /* FirstScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstScrollView.h; sourceTree = "<group>"; };
 		1820D1891C0FD086009139C8 /* FirstScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstScrollView.m; sourceTree = "<group>"; };
-		1820D18B1C0FD0BA009139C8 /* CustomTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableView.h; sourceTree = "<group>"; };
-		1820D18C1C0FD0BA009139C8 /* CustomTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableView.m; sourceTree = "<group>"; };
 		1820D18E1C102B4B009139C8 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		1820D1D51C105D8F009139C8 /* CustomSendMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSendMessage.h; sourceTree = "<group>"; };
 		1820D1D61C105D8F009139C8 /* CustomSendMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSendMessage.m; sourceTree = "<group>"; };
@@ -227,6 +226,10 @@
 		1820D2031C112019009139C8 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		1820D2151C11245D009139C8 /* CustomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollView.h; sourceTree = "<group>"; };
 		1820D2161C11245D009139C8 /* CustomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomScrollView.m; sourceTree = "<group>"; };
+		1820D3121C15A4B3009139C8 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
+		1820D3131C15A4B3009139C8 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		1820D3151C15C31C009139C8 /* CustomCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewLayout.h; sourceTree = "<group>"; };
+		1820D3161C15C31C009139C8 /* CustomCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,10 +447,12 @@
 				1820D1D61C105D8F009139C8 /* CustomSendMessage.m */,
 				1820D1881C0FD086009139C8 /* FirstScrollView.h */,
 				1820D1891C0FD086009139C8 /* FirstScrollView.m */,
-				1820D18B1C0FD0BA009139C8 /* CustomTableView.h */,
-				1820D18C1C0FD0BA009139C8 /* CustomTableView.m */,
 				1820D2151C11245D009139C8 /* CustomScrollView.h */,
 				1820D2161C11245D009139C8 /* CustomScrollView.m */,
+				1820D3121C15A4B3009139C8 /* CustomCollectionViewCell.h */,
+				1820D3131C15A4B3009139C8 /* CustomCollectionViewCell.m */,
+				1820D3151C15C31C009139C8 /* CustomCollectionViewLayout.h */,
+				1820D3161C15C31C009139C8 /* CustomCollectionViewLayout.m */,
 			);
 			name = FirstViews;
 			sourceTree = "<group>";
@@ -653,6 +658,7 @@
 			files = (
 				1820D18A1C0FD086009139C8 /* FirstScrollView.m in Sources */,
 				1820CF951C073EC2009139C8 /* CustomHeaderView.m in Sources */,
+				1820D3171C15C31C009139C8 /* CustomCollectionViewLayout.m in Sources */,
 				1820D2101C112019009139C8 /* UIButton+AFNetworking.m in Sources */,
 				1820CF831C06F55D009139C8 /* View+MASAdditions.m in Sources */,
 				1820CF151C06EB4B009139C8 /* AppDelegate.m in Sources */,
@@ -672,7 +678,6 @@
 				1820D2091C112019009139C8 /* AFURLConnectionOperation.m in Sources */,
 				1820CF451C06EB8B009139C8 /* FirstViewController.m in Sources */,
 				1820CF4E1C06EBC1009139C8 /* LeftViewController.m in Sources */,
-				1820D18D1C0FD0BA009139C8 /* CustomTableView.m in Sources */,
 				1820CF7D1C06F55D009139C8 /* MASConstraintMaker.m in Sources */,
 				1820D2111C112019009139C8 /* UIImageView+AFNetworking.m in Sources */,
 				1820D2121C112019009139C8 /* UIProgressView+AFNetworking.m in Sources */,
@@ -683,6 +688,7 @@
 				1820CF7E1C06F55D009139C8 /* MASLayoutConstraint.m in Sources */,
 				1820D2061C112019009139C8 /* AFHTTPSessionManager.m in Sources */,
 				1820CF921C0705A1009139C8 /* CustomFooterView.m in Sources */,
+				1820D3141C15A4B3009139C8 /* CustomCollectionViewCell.m in Sources */,
 				1820D2131C112019009139C8 /* UIRefreshControl+AFNetworking.m in Sources */,
 				1820CF811C06F55D009139C8 /* NSArray+MASAdditions.m in Sources */,
 				1820D2171C11245D009139C8 /* CustomScrollView.m in Sources */,

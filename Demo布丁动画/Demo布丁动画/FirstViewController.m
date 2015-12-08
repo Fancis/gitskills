@@ -29,7 +29,7 @@
     [super viewDidLoad];
     
     _size = self.view.frame.size;
-    FirstScrollView *firstScrollView = [[FirstScrollView alloc]initWithFrame:CGRectMake(0, 64, _size.width, _size.height -64)];
+    FirstScrollView *firstScrollView = [[FirstScrollView alloc]initWithFrame:CGRectMake(0, 64, _size.width, _size.height - 64)];
     [self.view addSubview:firstScrollView];
     firstScrollView.tag = 2002;
     
@@ -74,7 +74,7 @@
     NSString *imageString2 = @"http://img4q.duitang.com/uploads/item/201406/10/20140610224246_fFuUx.jpeg";
     NSString *imageString3 = @"http://p3.qhimg.com/t01516dde5c3b1e3b69.jpg";
     
-    customScrollView.images = @[imageString1,imageString2,imageString3];
+//    customScrollView.images = @[imageString1,imageString2,imageString3];
 }
 
 #pragma mark - 页面将要显示
