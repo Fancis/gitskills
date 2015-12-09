@@ -15,8 +15,16 @@
 #import "CustomCollectionViewLayout.h"
 #import "AFNetworking.h"
 #import "UIKit+AFNetworking.h"
+#import "NetworkManager.h"
+#import "DataManager.h"
+#import "APIs.h"
 
-@interface FirstScrollView ()<UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,CustomCollectionViewLayoutDelegate>
+#import "YYModel.h"
+#import "YYModelCollectionViewCell.h"
+#import "YYModelScorllImages.h"
+
+
+@interface FirstScrollView ()<UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,CustomCollectionViewLayoutDelegate,NetWorkManagerDelegate,DataManagerDelegate>
 {
     CGSize _size;
     CustomScrollView *_customScrollView;
@@ -26,6 +34,8 @@
     NSMutableArray *_mutiplied;
     
     NSMutableArray *_customScrollViewImages;
+    
+    DataManager *_dataManager;
 }
 @end
 
@@ -48,12 +58,17 @@
         view2.backgroundColor = [UIColor orangeColor];
         [self addSubview:view2];
         self.bounces = NO;//关闭scrollView的拖动弹性
+        [self.panGestureRecognizer addTarget:self action:@selector(openDrawerController)];
 
         _customScrollView = [[CustomScrollView alloc]initWithFrame:CGRectMake(0, 0, _size.width, 128)];
-        _customScrollView.tag = 2001;
         [view1 addSubview:_customScrollView];
-        NSMutableURLRequest *request1 = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://pudding.cc/api/v1/config?fields=featured_banner&apiKey=yuki_android&version=2.6.5&timestamp=1442737459&auth1=43259fe436b93b0c35681466980d33e3"]];
-        [self AFHTTPRequst:request1];
+        //网络请求类
+        NetworkManager *netManager = [NetworkManager new];
+        netManager.delegate = self;
+        //数据解析类
+        _dataManager = [DataManager new];
+        _dataManager.delegate = self;
+        [netManager netWorkManagerWithURL:[NSString stringWithFormat:@"%@%@",kHomePath,kCategoryScrollImages] andPara:nil];
         //
         _images = [NSMutableArray array];
         _names = [NSMutableArray array];
@@ -68,111 +83,61 @@
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.backgroundColor = [UIColor whiteColor];
-        [_collectionView registerClass:[CustomCollectionViewCell class] forCellWithReuseIdentifier:@"cellId"];
+        [_collectionView registerClass:[CustomCollectionViewCell class] forCellWithReuseIdentifier:kCellId];
         [self addSubview:_collectionView];
-        
-        NSMutableURLRequest *request2 = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://pudding.cc/api/v1/category?offset=0&limit=18&apiKey=yuki_android&version=2.6.5&timestamp=1442739762&auth1=76d6029863f2c0c3081e9dea9b67d0ee"]];
-        [self AFHTTPRequst:request2];
-        
+        [netManager netWorkManagerWithURL:[NSString stringWithFormat:@"%@%@",kHomePath,kCategoryCollectionViewCell] andPara:nil];
         customLayout.delegate = self;
     }
     return self;
 }
-
-- (void)AFHTTPRequst:(NSMutableURLRequest *)request{
-
-    AFHTTPRequestOperationManager *afManager = [AFHTTPRequestOperationManager manager];
-    afManager.responseSerializer = [AFHTTPResponseSerializer serializer];
-
-    [request setValue:@"Mozilla/5.0" forHTTPHeaderField:@"User-Agent"];
-    
-    AFHTTPRequestOperation *operation = [afManager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        if ([request.URL isEqual:[NSURL URLWithString:@"http://pudding.cc/api/v1/config?fields=featured_banner&apiKey=yuki_android&version=2.6.5&timestamp=1442737459&auth1=43259fe436b93b0c35681466980d33e3"]]) {
-            [self JSonRequest:responseObject];
-        }else{
-            [self collectionViewCellJSonRequest:responseObject];
-        }
-        
-        
-    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-        NSLog(@"失败，%@",error);
-    }];
-    [operation start];
-}
-
-- (void)JSonRequest:(NSData *)request{
-
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:request options:NSJSONReadingMutableLeaves error:nil];
-    NSArray *scrollImages = dict[@"featured_banner"];
-    for (NSDictionary *tempDict in scrollImages) {
-        [_customScrollViewImages addObject:tempDict[@"imageUrl"]];
+#pragma mark - 网络请求成功回调方法
+- (void)theResponseResultWith:(NetworkManager *)manager andResponseObj:(id)responseObj andError:(NSError *)error{
+    if (error) {
+        NSLog(@"%@",error);
+        return;
     }
-    _customScrollView.images = _customScrollViewImages;
+    [_dataManager dataManagerWithResponseObj:responseObj andError:error];
 }
+#pragma mark - 数据解析完成后调用的方法
+- (void)theDataManagerIsFull:(DataManager *)dataManager{
 
-- (void)collectionViewCellJSonRequest:(NSData *)request{
-    
-    NSArray *JsonArray = [NSJSONSerialization JSONObjectWithData:request options:NSJSONReadingMutableLeaves error:nil];
-    for (NSDictionary *tempDict in JsonArray) {
-        NSDictionary *imageDict = tempDict[@"image"];
-        NSString *urlString = imageDict[@"url"];
-        NSURL *url = [NSURL URLWithString:urlString];
-        [_images addObject:url];
-        NSString *nickName = tempDict[@"name"];
-        [_names addObject:nickName];
-        NSNumber *width = imageDict[@"width"];
-        NSNumber *height = imageDict[@"height"];
-        CGFloat tempMutiplied = width.floatValue / height.floatValue;
-        NSString *strMutiplied = [NSString stringWithFormat:@"%f",tempMutiplied];
-        [_mutiplied addObject:strMutiplied];
+    _dataManager = dataManager;
+    if ([_dataManager.scrollImages count] != 0) {
+    _customScrollView.images = _dataManager.scrollImages;
     }
-    [_collectionView reloadData];
+    if ([_dataManager.images count] != 0) {
+        [_collectionView reloadData];
+    }
 }
-
+#pragma mark - 返回的collectionViewCell个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    if ([_images count] != 0) {
-        return [_images count];
 
-    }else{
-    
-        return 0;
-    }
+        return [_dataManager.images count];
 }
-
+#pragma mark - 取出注册的collectionViewCell
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
-    CustomCollectionViewCell *cell = (CustomCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellId" forIndexPath:indexPath];
+    CustomCollectionViewCell *cell = (CustomCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kCellId forIndexPath:indexPath];
 
-        cell.labelString = _names[indexPath.row];
-        cell.image = _images[indexPath.row];
+    cell.labelString = _dataManager.names[indexPath.row];
+    cell.image = _dataManager.images[indexPath.row];
 
     return cell;
 }
-//每个cell的高度
+#pragma mark - 每个cell的高度
 - (CGFloat)collectionViewCellHeight:(NSIndexPath *)indexPath{
-    if ([_mutiplied count] != 0) {
         static NSInteger num = 0;
-        NSString *strMutiplied = _mutiplied[num];
+        NSString *strMutiplied = _dataManager.mutiplied[num];
         CGFloat mutiplied = strMutiplied.floatValue;
         num++;
         return 200/mutiplied;
-
-    }else{
-    
-        return 200.0;
-    }
-    
 }
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+#pragma mark - 拖动手势panGestureRecognizer被触发调用方法
+- (void)openDrawerController{
     FirstViewController *firstVC = [self findFirstViewController:self];
-    UITouch *touch = [touches anyObject];
-    UIView *tempView = touch.view;
-    if (tempView.tag == 3001) {
-        firstVC.mm_drawerController.panGestureRecognizer.enabled = YES;
-    }
+    firstVC.mm_drawerController.panGestureRecognizer.enabled = YES;
 }
-
+#pragma mark - 从responder层中获取到FirstViewController
 - (FirstViewController *)findFirstViewController:(UIResponder *)responder{
     
     UIResponder *tempResponder = responder;

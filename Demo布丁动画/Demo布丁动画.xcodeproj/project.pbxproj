@@ -78,6 +78,13 @@
 		1820D2171C11245D009139C8 /* CustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D2161C11245D009139C8 /* CustomScrollView.m */; };
 		1820D3141C15A4B3009139C8 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D3131C15A4B3009139C8 /* CustomCollectionViewCell.m */; };
 		1820D3171C15C31C009139C8 /* CustomCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D3161C15C31C009139C8 /* CustomCollectionViewLayout.m */; };
+		1820D31A1C16C2D0009139C8 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D3191C16C2D0009139C8 /* NetworkManager.m */; };
+		1820D3221C16DCD3009139C8 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D31E1C16DCD3009139C8 /* NSObject+YYModel.m */; };
+		1820D3231C16DCD3009139C8 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D3201C16DCD3009139C8 /* YYClassInfo.m */; };
+		1820D3261C16FD4D009139C8 /* YYModelScorllImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D3251C16FD4D009139C8 /* YYModelScorllImages.m */; };
+		1820D3291C16FDF0009139C8 /* YYModelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D3281C16FDF0009139C8 /* YYModelCollectionViewCell.m */; };
+		1820D32C1C16FF7E009139C8 /* YYModelCollectionVIewCellImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D32B1C16FF7E009139C8 /* YYModelCollectionVIewCellImage.m */; };
+		1820D3331C180A63009139C8 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820D3321C180A63009139C8 /* DataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +237,22 @@
 		1820D3131C15A4B3009139C8 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
 		1820D3151C15C31C009139C8 /* CustomCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewLayout.h; sourceTree = "<group>"; };
 		1820D3161C15C31C009139C8 /* CustomCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewLayout.m; sourceTree = "<group>"; };
+		1820D3181C16C2D0009139C8 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		1820D3191C16C2D0009139C8 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		1820D31B1C16C2EC009139C8 /* APIs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIs.h; sourceTree = "<group>"; };
+		1820D31D1C16DCD3009139C8 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		1820D31E1C16DCD3009139C8 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
+		1820D31F1C16DCD3009139C8 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
+		1820D3201C16DCD3009139C8 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		1820D3211C16DCD3009139C8 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		1820D3241C16FD4D009139C8 /* YYModelScorllImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModelScorllImages.h; sourceTree = "<group>"; };
+		1820D3251C16FD4D009139C8 /* YYModelScorllImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYModelScorllImages.m; sourceTree = "<group>"; };
+		1820D3271C16FDF0009139C8 /* YYModelCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModelCollectionViewCell.h; sourceTree = "<group>"; };
+		1820D3281C16FDF0009139C8 /* YYModelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYModelCollectionViewCell.m; sourceTree = "<group>"; };
+		1820D32A1C16FF7E009139C8 /* YYModelCollectionVIewCellImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModelCollectionVIewCellImage.h; sourceTree = "<group>"; };
+		1820D32B1C16FF7E009139C8 /* YYModelCollectionVIewCellImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYModelCollectionVIewCellImage.m; sourceTree = "<group>"; };
+		1820D3311C180A63009139C8 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		1820D3321C180A63009139C8 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,6 +365,7 @@
 		1820CF5D1C06EC1B009139C8 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				1820D31C1C16DCD3009139C8 /* YYModel */,
 				1820D1DD1C112019009139C8 /* AFNetworking */,
 				1820D1F11C112019009139C8 /* UIKit+AFNetworking */,
 				1820CF5F1C06F55D009139C8 /* Masonry */,
@@ -453,6 +477,12 @@
 				1820D3131C15A4B3009139C8 /* CustomCollectionViewCell.m */,
 				1820D3151C15C31C009139C8 /* CustomCollectionViewLayout.h */,
 				1820D3161C15C31C009139C8 /* CustomCollectionViewLayout.m */,
+				1820D3181C16C2D0009139C8 /* NetworkManager.h */,
+				1820D3191C16C2D0009139C8 /* NetworkManager.m */,
+				1820D3311C180A63009139C8 /* DataManager.h */,
+				1820D3321C180A63009139C8 /* DataManager.m */,
+				1820D31B1C16C2EC009139C8 /* APIs.h */,
+				1820D3301C1808A4009139C8 /* CustomYYModel */,
 			);
 			name = FirstViews;
 			sourceTree = "<group>";
@@ -506,6 +536,31 @@
 				1820D2031C112019009139C8 /* UIWebView+AFNetworking.m */,
 			);
 			path = "UIKit+AFNetworking";
+			sourceTree = "<group>";
+		};
+		1820D31C1C16DCD3009139C8 /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				1820D31D1C16DCD3009139C8 /* NSObject+YYModel.h */,
+				1820D31E1C16DCD3009139C8 /* NSObject+YYModel.m */,
+				1820D31F1C16DCD3009139C8 /* YYClassInfo.h */,
+				1820D3201C16DCD3009139C8 /* YYClassInfo.m */,
+				1820D3211C16DCD3009139C8 /* YYModel.h */,
+			);
+			path = YYModel;
+			sourceTree = "<group>";
+		};
+		1820D3301C1808A4009139C8 /* CustomYYModel */ = {
+			isa = PBXGroup;
+			children = (
+				1820D3241C16FD4D009139C8 /* YYModelScorllImages.h */,
+				1820D3251C16FD4D009139C8 /* YYModelScorllImages.m */,
+				1820D3271C16FDF0009139C8 /* YYModelCollectionViewCell.h */,
+				1820D3281C16FDF0009139C8 /* YYModelCollectionViewCell.m */,
+				1820D32A1C16FF7E009139C8 /* YYModelCollectionVIewCellImage.h */,
+				1820D32B1C16FF7E009139C8 /* YYModelCollectionVIewCellImage.m */,
+			);
+			name = CustomYYModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -672,12 +727,16 @@
 				1820CF841C06F55D009139C8 /* ViewController+MASAdditions.m in Sources */,
 				1820CF7F1C06F55D009139C8 /* MASViewAttribute.m in Sources */,
 				1820CF8A1C06FB1D009139C8 /* CustomTableViewCell.m in Sources */,
+				1820D31A1C16C2D0009139C8 /* NetworkManager.m in Sources */,
 				1820D2141C112019009139C8 /* UIWebView+AFNetworking.m in Sources */,
+				1820D32C1C16FF7E009139C8 /* YYModelCollectionVIewCellImage.m in Sources */,
+				1820D3231C16DCD3009139C8 /* YYClassInfo.m in Sources */,
 				1820D2041C112019009139C8 /* AFHTTPRequestOperation.m in Sources */,
 				1820CF7B1C06F55D009139C8 /* MASCompositeConstraint.m in Sources */,
 				1820D2091C112019009139C8 /* AFURLConnectionOperation.m in Sources */,
 				1820CF451C06EB8B009139C8 /* FirstViewController.m in Sources */,
 				1820CF4E1C06EBC1009139C8 /* LeftViewController.m in Sources */,
+				1820D3331C180A63009139C8 /* DataManager.m in Sources */,
 				1820CF7D1C06F55D009139C8 /* MASConstraintMaker.m in Sources */,
 				1820D2111C112019009139C8 /* UIImageView+AFNetworking.m in Sources */,
 				1820D2121C112019009139C8 /* UIProgressView+AFNetworking.m in Sources */,
@@ -690,15 +749,18 @@
 				1820CF921C0705A1009139C8 /* CustomFooterView.m in Sources */,
 				1820D3141C15A4B3009139C8 /* CustomCollectionViewCell.m in Sources */,
 				1820D2131C112019009139C8 /* UIRefreshControl+AFNetworking.m in Sources */,
+				1820D3291C16FDF0009139C8 /* YYModelCollectionViewCell.m in Sources */,
 				1820CF811C06F55D009139C8 /* NSArray+MASAdditions.m in Sources */,
 				1820D2171C11245D009139C8 /* CustomScrollView.m in Sources */,
 				1820D20A1C112019009139C8 /* AFURLRequestSerialization.m in Sources */,
 				1820D20C1C112019009139C8 /* AFURLSessionManager.m in Sources */,
 				1820D2081C112019009139C8 /* AFSecurityPolicy.m in Sources */,
+				1820D3261C16FD4D009139C8 /* YYModelScorllImages.m in Sources */,
 				1820CF481C06EB9D009139C8 /* SecondeViewController.m in Sources */,
 				1820CF981C084984009139C8 /* CircleView.m in Sources */,
 				1820D1D71C105D8F009139C8 /* CustomSendMessage.m in Sources */,
 				1820CF121C06EB4B009139C8 /* main.m in Sources */,
+				1820D3221C16DCD3009139C8 /* NSObject+YYModel.m in Sources */,
 				1820D20D1C112019009139C8 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				1820CF591C06EBE1009139C8 /* MMDrawerBarButtonItem.m in Sources */,
 				1820D2071C112019009139C8 /* AFNetworkReachabilityManager.m in Sources */,

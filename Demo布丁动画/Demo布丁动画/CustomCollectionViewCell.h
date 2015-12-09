@@ -10,7 +10,7 @@
 
 @interface CustomCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic,strong)UIImage *image;
+@property (nonatomic,copy)NSString *image;
 @property (nonatomic,copy)NSString *labelString;
 
 @end

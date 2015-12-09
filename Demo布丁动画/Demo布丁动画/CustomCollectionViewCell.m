@@ -27,7 +27,7 @@
     if (self) {
         
         _imageView = [UIImageView new];
-        _imageView.layer.cornerRadius = 10;
+        _imageView.layer.cornerRadius = 6;
         _imageView.layer.masksToBounds = YES; //imageView的masksToBounds默认为NO设置为yes圆角才有效果
         [self addSubview:_imageView];
         [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -37,20 +37,20 @@
         }];
         _label = [UILabel new];
         _label.textAlignment = NSTextAlignmentCenter;
-        _label.backgroundColor = [UIColor whiteColor];
+        _label.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.5];
+        
         [self addSubview:_label];
         [_label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(self);
             make.height.equalTo(@20);
             make.width.equalTo(self);
         }];
-        
     }
     return self;
 }
-- (void)setImage:(UIImage *)image{
+- (void)setImage:(NSString *)image{
 
-    [_imageView setImageWithURL:(NSURL *)image placeholderImage:[UIImage imageNamed:@"IMG_0079.JPG"]];
+    [_imageView setImageWithURL:[NSURL URLWithString:image] placeholderImage:[UIImage imageNamed:@"IMG_0079.JPG"]];
 }
 
 - (void)setLabelString:(NSString *)labelString{

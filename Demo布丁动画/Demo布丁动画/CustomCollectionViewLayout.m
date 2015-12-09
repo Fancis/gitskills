@@ -49,7 +49,7 @@
     //每一列item的所有y坐标用一个数组存起来再放到一个大数组里
     for (int i = 0; i < _totalColumn; i++) {
         NSMutableArray *recodeY = [NSMutableArray array];
-        if ([_recodesPosition_y count] < 2) {
+        if ([_recodesPosition_y count] < _totalColumn) {
             [_recodesPosition_y addObject:recodeY];
         }
     }
@@ -76,9 +76,8 @@
             [_attrs addObject:attr];
         }
     }
-    
 }
-
+#pragma mark - 必需要实现的方法三个方法之一，给所有的item设置属性attributes
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect{
 
     return _attrs;

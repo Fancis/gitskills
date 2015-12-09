@@ -45,6 +45,8 @@
         self.pagingEnabled = YES;
         [self setContentOffset:CGPointMake(_size.width, 0)];
         [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(autoScrollView) userInfo:nil repeats:YES];
+        
+        [self.panGestureRecognizer addTarget:self action:@selector(closeDrawerController)];
     }
     return self;
 }
@@ -64,22 +66,22 @@
         make.width.equalTo(@100);
     }];
 }
-
+#pragma mark - 定时器调用的方法让CustomScrollView自动滚动
 - (void)autoScrollView{
 
     [self setContentOffset:CGPointMake(_size.width*2, 0) animated:YES];
 }
-
+#pragma mark - 代码滚动结束调用的方法
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
    
     [self anyScrollViewDidEnd:scrollView];
 }
-
+#pragma mark - 手动滚动结束调用的方法
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
 
     [self anyScrollViewDidEnd:scrollView];
 }
-
+#pragma mark - 对从外界获取到的images做处理
 - (void)setImages:(NSArray *)images{
     _images = [NSMutableArray array];
     [_images addObjectsFromArray:images];
@@ -114,7 +116,7 @@
         }
     }
 }
-
+#pragma mark - 给初始化的三个imageVIew做处理
 - (void)anyScrollViewDidEnd:(UIScrollView *)scrollView{
     
     static NSInteger currentIndex = 1;
@@ -173,13 +175,13 @@
     _pageControl.currentPage = num;
     
 }
-#if 1
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-
+#pragma mark - 拖动手势panGestureRecognizer触发调用的方法
+- (void)closeDrawerController{
     FirstViewController *firstVC = [self findFirstViewController:self];
     firstVC.mm_drawerController.panGestureRecognizer.enabled = NO;
+    
 }
-
+#pragma mark - 从responder层中获取FirstViewController以便操作抽屉
 - (FirstViewController *)findFirstViewController:(UIResponder *)responder{
 
     UIResponder *tempResponder = responder;
@@ -191,7 +193,7 @@
         return [self findFirstViewController:tempResponder];
     }
 }
-#endif
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
